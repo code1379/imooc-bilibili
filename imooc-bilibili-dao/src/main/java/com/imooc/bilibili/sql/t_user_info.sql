@@ -1,5 +1,5 @@
 CREATE TABLE `t_user_info` (
-                               `id` bigint NOT NULL COMMENT '主键',
+                               `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键',
                                `userId` bigint DEFAULT NULL COMMENT '用户id',
                                `nick` varchar(100) DEFAULT NULL COMMENT '昵称',
                                `avatar` varchar(255) DEFAULT NULL COMMENT '头像',

@@ -91,4 +91,13 @@ public class UserService {
         String token = TokenUtil.generateToken(dbUser.getId());
         return token;
     }
+
+    public User getUserInfo(Long userId) {
+        User user =  userDao.getUserById(userId);
+        UserInfo userInfo = userDao.getUserInfoByUserId(userId);
+        // 如果我们想返回 User 实体类，想把 user 和 userInfo 进行一个整合
+        // 两种方法 1. 放到将两个放到 Map 里面 2. 在 User 类里面添加冗余字段 userInfo
+        user.setUserInfo(userInfo);
+        return user;
+    }
 }
