@@ -12,6 +12,8 @@ public class UserInfo {
        public String birth;
        public Date createTime;
        public Date updateTime;
+       // 代表我是否关注了这个人（互相关注）
+       private Boolean followed;
 
        public Long getId() {
               return id;
@@ -83,5 +85,13 @@ public class UserInfo {
 
        public void setUpdateTime(Date updateTime) {
               this.updateTime = updateTime;
+       }
+
+       public Boolean getFollowed() {
+              return followed;
+       }
+
+       public void setFollowed(Boolean followed) {
+              this.followed = followed;
        }
 }
