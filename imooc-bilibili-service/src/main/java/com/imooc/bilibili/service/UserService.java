@@ -65,6 +65,10 @@ public class UserService {
        return userDao.getUserByPhone(phone);
     }
 
+    public User getUserById(Long id) {
+        return userDao.getUserById(id);
+    }
+
     public String login(User user) throws Exception{
         String phone = user.getPhone();
         if(StringUtils.isNullOrEmpty(phone)) {
