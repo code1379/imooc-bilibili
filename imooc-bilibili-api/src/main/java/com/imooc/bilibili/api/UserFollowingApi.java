@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -49,4 +50,12 @@ public class UserFollowingApi {
         return new JsonResponse<>(result);
     }
 
+    // 新建用户分组
+    @PostMapping("/user-following-groups")
+        public JsonResponse<Long> addUserFollowingGroups(@RequestBody FollowingGroup followingGroup) {
+            Long userId = userSupport.getCurrentUserId();
+            followingGroup.setUserId(userId);
+            Long groupId = userFollowingService.addUserFollowingGroups(followingGroup);
+            return new JsonResponse<>(groupId);
+        }
 }

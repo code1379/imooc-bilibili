@@ -153,4 +153,12 @@ public class UserFollowingService {
 
         return fanList;
     }
+
+    public Long addUserFollowingGroups(FollowingGroup followingGroup) {
+        followingGroup.setCreateTime(new Date());
+        followingGroup.setType(UserConstant.USER_FOLLOWING_GROUP_TYPE_CUSTOM);
+        followingGroupService.addUserFollowingGroups(followingGroup);
+        // 因为设置了 useGenerateKey keyProps 所以可以使用 getId 获取到id
+        return followingGroup.getId();
+    }
 }

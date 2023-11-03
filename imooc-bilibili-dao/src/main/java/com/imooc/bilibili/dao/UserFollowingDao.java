@@ -1,6 +1,7 @@
 package com.imooc.bilibili.dao;
 
 
+import com.imooc.bilibili.domain.FollowingGroup;
 import com.imooc.bilibili.domain.UserFollowing;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +17,5 @@ public interface UserFollowingDao {
     List<UserFollowing> getUserFollowing(Long userId);
 
     List<UserFollowing> getUserFans(Long userId);
+
 }
