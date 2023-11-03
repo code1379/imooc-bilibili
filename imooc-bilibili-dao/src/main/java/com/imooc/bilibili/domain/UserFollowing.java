@@ -10,7 +10,7 @@ public class UserFollowing {
     public Long followingId;
     public Long groupId;
     public Date createTime;
-
+    private UserInfo userInfo;
     public Long getId() {
         return id;
     }
@@ -49,5 +49,13 @@ public class UserFollowing {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 }

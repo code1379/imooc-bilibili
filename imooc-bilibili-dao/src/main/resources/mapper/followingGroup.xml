@@ -9,4 +9,14 @@
     <select id="getById" parameterType="java.lang.Long" resultType="com.imooc.bilibili.domain.FollowingGroup">
         select * from t_following_group where id = #{id}
     </select>
+
+<!-- 查询分为两部分 1. 系统创建的默认分组 2. 用户创建的自定义分组 -->
+    <select id="getByUserId"  parameterType="java.lang.Long"  resultType="com.imooc.bilibili.domain.FollowingGroup">
+        select
+            *
+        from
+            t_following_group
+        where
+            userId = #{userId} or `type` in ('0', '1', '2')
+    </select>
 </mapper>

@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.imooc.bilibili.dao.UserFollowingDao">
-    <select id="deleteUserFollowing" resultType="java.lang.Long">
+    <delete id="deleteUserFollowing">
         delete from
                    t_user_following
         where
             userId = #{userId} and followingId = #{followingId}
-    </select>
+    </delete>
     <insert id="addUserFollowing" parameterType="com.imooc.bilibili.domain.UserFollowing">
         insert into
             t_user_following(
@@ -23,4 +23,12 @@
                     #{createTime}
                 )
     </insert>
+    <select id="getUserFollowing" parameterType="java.lang.Long" resultType="com.imooc.bilibili.domain.UserFollowing">
+        select
+            *
+        from
+            t_user_following
+        where
+            userId = #{userId}
+    </select>
 </mapper>
