@@ -161,4 +161,8 @@ public class UserFollowingService {
         // 因为设置了 useGenerateKey keyProps 所以可以使用 getId 获取到id
         return followingGroup.getId();
     }
+
+    public List<FollowingGroup> getUserFollowingGroups(Long userId) {
+        return followingGroupService.getUserFollowingGroups(userId);
+    }
 }
